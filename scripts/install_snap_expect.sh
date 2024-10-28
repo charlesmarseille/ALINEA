@@ -18,7 +18,7 @@ expect {
     }
 
     "Where should ESA SNAP be installed?" {
-        send "/vscode/esa-snap\r"
+        send "/root/esa-snap\r"
         exp_continue
     }
 
