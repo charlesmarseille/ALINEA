@@ -10,4 +10,4 @@ wget $URL -O esa-snap_sentinel_linux-10.0.0.sh
 chmod +x ./esa-snap_sentinel_linux-10.0.0.sh
 
 # # Use expect to automate the installation process
-/usr/bin/expect install_snap_expect.sh
+/usr/bin/expect /root/ALINEA/scripts/install_snap_expect.sh
