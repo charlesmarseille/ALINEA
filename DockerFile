@@ -23,12 +23,9 @@ RUN apt-get update && \
 # Install Python packages
 RUN pip install ipython requests pandas geopandas rasterio matplotlib tqdm gdal
 
-RUN git clone https://www.github.com/charlesmarseille/ALINEA
+RUN git clone https://www.github.com/charlesmarseille/ALINEA /root/ALINEA
 
-# Make the script executable
-RUN cd ALINEA/scripts/
-
-RUN chmod +x download_and_install_snap.sh
+RUN chmod +x /root/ALINEA/scripts/download_and_install_snap.sh
 
 # Run the script
-RUN ./download_and_install_snap.sh
+RUN /root/ALINEA/scripts/download_and_install_snap.sh
