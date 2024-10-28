@@ -1,0 +1,25 @@
+# create container
+install docker
+run as admin always!
+
+#install wsl
+wsl --install -d ubuntu-22.04
+
+#install deps
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install pip default-jre gdal-bin libgdal-dev -y
+
+#install SNAP
+wget https://download.esa.int/step/snap/10_0/installers/esa-snap_sentinel_linux-10.0.0.sh && sudo bash esa-snap_sentinel_linux-10.0.0.sh
+
+-> change the install folder to else than default (bug in SNAP 10.0.0)
+-> check the python checkbox and select binary (/usr/bin/python3)
+-> once installed, check for updates and update if asked (10.0.1)
+
+#Setup snap python
+/home/vscode/esa-snap/bin/snappy-conf /usr/bin/python3 /home/vscode/.snap/snap-python
+
+#Install pip deps
+pip install ipython requests pandas geopandas rasterio matplotlib tqdm gdal
+
+
+# The local disk is mounted at /mnt/c (if c drive)
