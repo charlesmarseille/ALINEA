@@ -25,14 +25,18 @@ from tqdm import tqdm
 import urllib.parse
 import sys
 
-if len(sys.argv) < 4:
-    print("Usage: python download_sentinel1_from_extent_test.py <zone_name> <shapefile_path> <dates>")
-    print("Example: python download_sentinel1_from_extent_test.py fitri zones/fitri_extent.shp 2024-01-09,2023-06-09,2023-01-09")
-    sys.exit(1)
+# if len(sys.argv) < -1: #4
+#     print("Usage: python download_sentinel1_from_extent_test.py <zone_name> <shapefile_path> <dates>")
+#     print("Example: python download_sentinel1_from_extent_test.py fitri zones/fitri_extent.shp 2024-01-09,2023-06-09,2023-01-09")
+#     sys.exit(1)
 # Load polygons from a shapefile
-zone_name = sys.argv[1]
-shapefile_path = sys.argv[2]
-dates = [dt.fromisoformat(date) for date in sys.argv[3].split(",")] 
+# zone_name = sys.argv[1]
+# shapefile_path = sys.argv[2]
+# dates = [dt.fromisoformat(date) for date in sys.argv[3].split(",")] 
+zone_name = os.environ.get('zone')
+shapefile_path = os.environ.get('shapefile_name')
+dates = os.environ.get('capture_date')
+|#dates = dates.toDate
 
 # start_date = dt.today()
 # dates = [(start_date - timedelta(days=90 * i)) for i in range(30)]
