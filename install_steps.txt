@@ -11,6 +11,9 @@ wsl --update
 
 #restart pc
 
+#lauch docker-desktop, add user to docker-users group
+net localgroup docker-users "DOMAIN\your-user-id" /ADD
+
 #open terminal, clone folder
 git clone https://www.github.com/charlesmarseille/ALINEA
 cd ALINEA

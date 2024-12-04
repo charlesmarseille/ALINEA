@@ -1,0 +1,25 @@
+dossier de projet:
+1. .bat 
+2. fichier de config (tu choisis le format)
+	-> path du shapefile
+	-> date format YYYY-MM-DD
+	-> opt: intervalle de temps max pour la date
+	-> opt: path pour le tif (sinon current dir)
+3. readme
+	-> explique comment remplir le .config
+	-> explique les étapes qui sont faites dans les scripts dans le container
+	-> spécifie nos courriels pour questions si ca marche pas (docker desktop, format, pas de données, mauvais shapefile)
+
+étapes:
+
+git pull github
+essaie run/exec image,
+si ca marche pas, build et exec
+	-> séquence scripts
+		-> download image avec shapefile
+		-> prétraitements SNAP
+		-> output du tif dans le current dir local windows 
+	-> print dans la console (cmd ou pwsh windows, pas dans le container) et dans un fichier .output:
+		- fichiers créés
+		- temps que le traitement a pris
+		- erreurs s'il y a lieu -> print en ROUGE EN GRAS, ca doit etre évident qu'il y a une erreur
