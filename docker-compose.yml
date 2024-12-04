@@ -3,8 +3,7 @@ version: '3'
 services:
   ALINEA:
     build:
-      context: C:/docker/ALINEA/
       dockerfile: Dockerfile
     image: img_alinea
     volumes: 
-      - ./:/mnt/alinea_vol
+      - ${FOLDER_PATH}:/mnt/alinea_vol
