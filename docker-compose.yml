@@ -6,6 +6,5 @@ services:
       context: C:/docker/ALINEA/
       dockerfile: Dockerfile
     image: img_alinea
-    env_file: config.env
     volumes: 
       - ./:/mnt/alinea_vol
