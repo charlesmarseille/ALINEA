@@ -3,6 +3,7 @@ version: '3'
 services:
   ALINEA:
     build:
+      context: C:/docker/ALINEA/
       dockerfile: Dockerfile
     image: img_alinea
     env_file: config.env
