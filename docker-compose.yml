@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  ALINEA:
+    build:
+      dockerfile: Dockerfile
+    image: img_alinea
+    env_file: config.env
+    volumes: 
+      - ./:/mnt/alinea_vol
