@@ -116,10 +116,6 @@ if not os.path.exists(input_folder):
     print(f"File {input_folder} does not exist.")
     sys.exit(1)
 
-if len(shapefile_path)<1:
-    print("no shapefile found..")
-    sys.exit(1)
-
 if not os.path.exists(shapefile_path):
     print(f"No shapefile found with path: {shapefile_path}")
     sys.exit(1)
