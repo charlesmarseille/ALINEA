@@ -12,7 +12,6 @@ Usage:
     python process_sentinel.py --input_folder <path_to_input_folder>
 '''
 
-
 import os
 import subprocess
 import zipfile
@@ -31,7 +30,7 @@ from rasterio.merge import merge
 from rasterio.plot import show
 from glob import glob
 
-gpt_path = '/vscode/esa-snap/bin/gpt'
+gpt_path = '/root/esa-snap/bin/gpt'
 
 def print_ascii_art():
     art = """
@@ -104,22 +103,27 @@ def merge_tif_files(directory):
 print_ascii_art()
 
 parser = argparse.ArgumentParser(description='Process Sentinel-1 data.')
-parser.add_argument('--input-folder', type=str, required=True, help='Path to the input Sentinel-1 data file')
+parser.add_argument('--input-folder', type=str, required=True, help='Path to the input Sentinel-1 data file folder')
+parser.add_argument('--shapefile', type=str, required=True, help='Path to the input shapefile')
+
 args = parser.parse_args()
 parser.print_help()
 
 input_folder = args.input_folder
-shapefile_path = glob(input_folder + '/*.shp')
+if input_folder[-1] != "/":
+    input_folder = input_folder[:-1]
+
+shapefile_path = args.shapefile
 
 if not os.path.exists(input_folder):
     print(f"File {input_folder} does not exist.")
     sys.exit(1)
 
-if len(shapefile_path)>1:
-    print(f"Multiple shapefiles found, 1 is required: {shapefile_path}")
+if len(shapefile_path)<1:
+    print("no shapefile found..")
     sys.exit(1)
 
-if not os.path.exists(shapefile_path[0]):
+if not os.path.exists(shapefile_path):
     print(f"No shapefile found in folder.")
     sys.exit(1)
 
