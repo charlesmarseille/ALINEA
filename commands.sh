@@ -9,6 +9,6 @@ echo "downloading data from sentinel1 for zone : ${ZONE}"
 echo "Shapefile path: '${FOLDERPATH}/${SHAPEFILE_NAME}'"
 echo "Dates: ${CAPTURE_DATE}"
 python3 /root/ALINEA/scripts/download_sentinel1_from_extent.py $ZONE "/mnt/alinea_vol/${SHAPEFILE_NAME}" $CAPTURE_DATE
-python3 /root/ALINEA/scripts/process_sentinel.py --input-folder "/mnt/alinea_vol/"
+python3 /mnt/alinea_vol/process_sentinel.py --input-folder "/mnt/alinea_vol/data/${ZONE}/polygon0" --shapefile /mnt/alinea_vol/fitri_bounding_box.shp
 
 echo "done."
