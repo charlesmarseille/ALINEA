@@ -23,7 +23,10 @@ from shapely.geometry import shape
 import os
 from tqdm import tqdm
 import urllib.parse
+import urllib3
 import sys
+
+urllib3.disable_warnings()
 
 if len(sys.argv) < 4:
     print("Usage: python download_sentinel1_from_extent_test.py <zone_name> <shapefile_path> <dates>")

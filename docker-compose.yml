@@ -1,5 +1,4 @@
 # to run the terminal in interactive mode:  docker-compose -f c:/docker/ALINEA/docker-compose.yml --env-file ./config.env run ALINEA bin/bash
-
 services:
   ALINEA:
     build:

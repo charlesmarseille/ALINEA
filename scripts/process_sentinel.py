@@ -104,7 +104,7 @@ def merge_tif_files(directory):
 print_ascii_art()
 
 parser = argparse.ArgumentParser(description='Process Sentinel-1 data.')
-parser.add_argument('--input_folder', type=str, required=True, help='Path to the input Sentinel-1 data file')
+parser.add_argument('--input-folder', type=str, required=True, help='Path to the input Sentinel-1 data file')
 args = parser.parse_args()
 parser.print_help()
 
@@ -112,7 +112,7 @@ input_folder = args.input_folder
 shapefile_path = glob(input_folder + '/*.shp')
 
 if not os.path.exists(input_folder):
-    print(f"File {input_file} does not exist.")
+    print(f"File {input_folder} does not exist.")
     sys.exit(1)
 
 if len(shapefile_path)>1:
