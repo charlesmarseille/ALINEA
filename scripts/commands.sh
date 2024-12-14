@@ -2,6 +2,9 @@
 
 . /mnt/alinea_vol/config.env
 
+cd /root/ALINEA
+git pull
+
 echo "----------------------------------------"
 echo "--  Starting processing in container  --"
 echo "----------------------------------------"
