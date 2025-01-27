@@ -1,0 +1,26 @@
+#log in as admin user
+
+#install git
+https://git-scm.com/downloads/win
+
+#install docker-desktop
+https://www.docker.com/products/docker-desktop/
+
+#open terminal, run 
+wsl --update
+
+#restart pc
+
+#launch docker-desktop, add user to docker-users group
+net localgroup docker-users "DOMAIN\your-user-id" /ADD
+
+#open terminal, clone folder
+mkdir c:/docker
+cd c:/docker
+git clone https://www.github.com/charlesmarseille/ALINEA
+cd ALINEA
+
+#copy config.env.bak and scripts/process_sentinel1_SNAP.ps1 to folder where shapefile is located
+#edit and rename config.env.bak to config.env (frontslashes, no backslashes!!)
+#double-click process_sentinel1_SNAP.ps1
+#processed data will be stored in the data/ folder. 

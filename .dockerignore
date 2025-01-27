@@ -1,0 +1,4 @@
+/sys/fs/cgroup/
+/sys/firmware/
+/proc/acpi/
+/sys/firmware/
