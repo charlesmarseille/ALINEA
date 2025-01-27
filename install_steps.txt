@@ -11,7 +11,7 @@ net localgroup docker-users "DOMAIN\your-user-id" /ADD
 4. restart pc
 
 5. open powershell:
-cd c:/
+cd c:\Users\$Env:UserName
 wget -O download_ALINEA.ps1 https://raw.githubusercontent.com/charlesmarseille/ALINEA/main/download_ALINEA.ps1
 download_ALINEA.ps1
 
