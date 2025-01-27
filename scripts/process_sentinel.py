@@ -31,6 +31,7 @@ from rasterio.plot import show
 from glob import glob
 
 gpt_path = '/root/esa-snap/bin/gpt'
+scripts_path = '/root/ALINEA/scripts/'
 
 def print_ascii_art():
     art = """
@@ -141,8 +142,8 @@ for input_file in glob(input_folder + '/*SAFE.zip'):
         with open(wkt_file_path, 'r') as wkt_file:
             wkt_polygon = wkt_file.read()
 
-    subset_orbit_template = 'orb.xml'
-    subset_orbit_temp = 'orb_temp.xml'
+    subset_orbit_template = scripts_path + 'orb.xml'
+    subset_orbit_temp = scripts_path + 'orb_temp.xml'
     output_file = f'{input_file[:-9]}_processed'
     with open(subset_orbit_template, 'r') as file:
         xml_content = file.read()
@@ -161,8 +162,8 @@ for input_file in glob(input_folder + '/*SAFE.zip'):
     print("Processing completed.")
     print("took ", dt.now() - now, " seconds")
 
-    dim_to_tif = 'dim_to_tif.xml'
-    dim_to_tif_temp = 'dim_to_tif_temp.xml'
+    dim_to_tif = scripts_path + 'dim_to_tif.xml'
+    dim_to_tif_temp = scripts_path + 'dim_to_tif_temp.xml'
     output_file_tif = output_file + '.tif'
     with open(dim_to_tif, 'r') as file:
         xml_content = file.read()
