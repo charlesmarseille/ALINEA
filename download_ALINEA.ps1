@@ -30,6 +30,9 @@ if ($extractedFolder) {
 
     # Remove the ALINEA-main folder
     Remove-Item -Path $extractedFolder.FullName -Force -Recurse
+
+    # Open the destination folder in Explorer
+    Invoke-Item $destinationFolder
 }
 else {
     Write-Warning "Could not find the extracted ALINEA-main folder."
