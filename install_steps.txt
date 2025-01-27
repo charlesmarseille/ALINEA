@@ -1,26 +1,23 @@
-#log in as admin user
-
-#install git
-https://git-scm.com/downloads/win
-
-#install docker-desktop
+1. install docker-desktop
 https://www.docker.com/products/docker-desktop/
 
-#open terminal, run 
+2. open terminal, run 
 wsl --update
 
-#restart pc
-
-#launch docker-desktop, add user to docker-users group
+3. open powershell as admin: authorize PS1 execution and add user to docker-users group
+Set-ExecutionPolicy Unrestricted
 net localgroup docker-users "DOMAIN\your-user-id" /ADD
 
-#open terminal, clone folder
-mkdir c:/docker
-cd c:/docker
-git clone https://www.github.com/charlesmarseille/ALINEA
-cd ALINEA
+4. restart pc
 
-#copy config.env.bak and scripts/process_sentinel1_SNAP.ps1 to folder where shapefile is located
-#edit and rename config.env.bak to config.env (frontslashes, no backslashes!!)
-#double-click process_sentinel1_SNAP.ps1
-#processed data will be stored in the data/ folder. 
+5. download and run this file:
+https://www.github.com/charlesmarseille/ALINEA/download_ALINEA.ps1
+
+
+6. A new explorer window opens:
+- copy config.env.bak and scripts/process_sentinel1_SNAP.ps1 to folder where shapefile is located
+- rename config.env.bak to config.env
+- edit config.env file according to project
+- right-click process_sentinel1_SNAP.ps1, execute in powershell
+
+Processed data will be stored in the data/ folder in the current working directory.
