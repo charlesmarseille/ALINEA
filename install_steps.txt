@@ -10,9 +10,10 @@ net localgroup docker-users "DOMAIN\your-user-id" /ADD
 
 4. restart pc
 
-5. download and run this file:
-https://www.github.com/charlesmarseille/ALINEA/download_ALINEA.ps1
-
+5. open powershell:
+cd c:/
+wget -O download_ALINEA.ps1 https://raw.githubusercontent.com/charlesmarseille/ALINEA/main/download_ALINEA.ps1
+download_ALINEA.ps1
 
 6. A new explorer window opens:
 - copy config.env.bak and scripts/process_sentinel1_SNAP.ps1 to folder where shapefile is located
